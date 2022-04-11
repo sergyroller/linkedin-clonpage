@@ -1,0 +1,537 @@
+/* RESET CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* START CODE */
+
+:root {
+   --color-white: #FFF;
+   --color-action: #0a66c2;
+   --color-grey: rgba(0, 0, 0, 0.6);
+   --color-base-bg: #f3f2ef;
+}
+
+body {
+   font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif
+}
+
+body {
+   background-color:var(--color-base-bg)
+}
+
+.container {
+   max-width:1128px;
+   margin:0 auto;
+}
+
+
+/* HEADER */
+
+
+header {
+   background-color:var(--color-white);
+}
+
+header .container {
+display:flex;
+padding:8px 15px;
+align-items:center;
+gap:0.5rem;
+}
+
+header .logo {
+   height:34px;
+   fill: var(--color-action)
+}
+
+.search-bar {
+   width:35%;
+   position:relative;
+}
+.search-bar input {
+   height:34px;
+   border:none;
+   background-color:var(--color-base-bg);
+   border-radius:3px;
+   width:70%;
+   padding-left:40px;
+   color:var(--color-grey);
+}
+
+.search-bar .icon-search {
+   position:absolute;
+   top:50%;
+   bottom:0;
+   transform: translate(80%,-50%);
+   color:var(--color-grey)
+}
+
+.search-bar input:focus-visible {
+   outline:none;
+}
+
+.nav-items {
+   display:flex;
+}
+
+.nav-items .item a {
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   text-decoration:none;
+   color:var(--color-grey);
+   gap:0.3rem;
+   font-size:12px;
+   min-width:80px;
+}
+
+.nav-items .item a.user-perfil {
+   border-right:1px solid var(--color-base-bg);
+}
+
+.nav-items svg {
+   width:24px;
+   height:22px;
+   fill: var(--color-grey)
+}
+
+.nav-items img {
+   border-radius:50%;
+}
+
+section.content {
+
+}
+
+.grid-areas {
+   display:grid;
+   grid-template-areas: "sidebar main aside";
+   grid-template-columns: minmax(0,5fr) minmax(0,12fr) minmax(300px,7fr);
+   gap:1.3rem;
+}
+
+.sidebar-area {
+   grid-area:sidebar;
+
+}
+
+.sidebar-item:first-child {
+   margin-top:20px;
+}
+
+
+.sidebar-item {
+   background-color:var(--color-white);
+   border-radius:0.5rem;
+   margin-top:7px;
+   overflow:hidden;
+   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+}
+
+.sidebar-item .inner-section {
+   padding:12px;
+   border-bottom:1px solid var(--color-base-bg);
+}
+
+.sidebar-item .bg-image-user {
+   background-image:url(https://media-exp1.licdn.com/dms/image/C4E16AQH-t70oJtL9qA/profile-displaybackgroundimage-shrink_200_800/0/1640888200852?e=1655337600&v=beta&t=RuQeVGlhXI9JXpari9nnd1I32ToG0bBVvchMJD5xiSU);
+   height:56px;
+   background-position:center;
+   background-size: cover;
+   margin:-12px -12px 0;
+}
+
+.sidebar-item .perfil-image {
+   display:block;
+   text-align:center;
+   margin-top:-40px;
+}
+
+.sidebar-item .perfil-image img {
+   border-radius:50%;
+   background-color:var(--color-white);
+   padding:2px;
+}
+
+.sidebar-item .user-info {
+   text-align:center;
+}
+
+.sidebar-item .user-info p {
+   margin:10px 0;
+   color:var(--color-grey);
+}
+
+.sidebar-item .user-info .name-user {
+   font-weight:600;
+}
+
+.sidebar-item .user-info .description-user {
+   font-size:12px;
+   line-height:18px;
+}
+
+.sidebar-item .info-visited {
+   padding:12px 0px;
+}
+
+.sidebar-item .info-visited a {
+   text-decoration:none;
+   color:var(--color-grey);
+   font-size:12px;
+   font-weight:600;
+   line-height:15px;
+}
+.sidebar-item .info-visited a div  {
+display:flex;
+justify-content:space-between;
+padding:4px 12px;
+}
+
+.sidebar-item .info-visited a div p:last-child {
+   color:var(--color-action)
+}
+
+.sidebar-item .info-visited a div:hover {
+   background-color:var(--color-base-bg);
+}
+
+.sidebar-item #free-premium a {
+   text-decoration:none;
+   color:var(--color-grey);
+   font-size:12px;
+}
+
+.sidebar-item #free-premium .free-premium-container {
+   padding:12px;
+}
+
+.sidebar-item #free-premium .free-premium-container:hover {
+   background-color:var(--color-base-bg)
+}
+
+.sidebar-item .free-premium {
+   margin-top:5px;
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+}
+
+.sidebar-item .free-premium p {
+   font-weight:700;
+}
+
+.sidebar-item #bookmark a {
+   text-decoration:none;
+   color:var(--color-grey);
+   font-size:12px;
+   font-weight:700;
+}
+
+.sidebar-item .bookmark-container {
+   padding:12px;
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+}
+
+.sidebar-item .bookmark-container:hover {
+   background-color:var(--color-base-bg);
+}
+/* MAIN CONTENT */
+
+.main-area {
+   grid-area:main;
+   margin-top:20px;
+}
+
+.main-area .main-item {
+   background-color:var(--color-white);
+   border-radius:0.5rem;
+   overflow:hidden;
+   box-shadow:rgb(0 0 0 / 5%) 0px 0px 0px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+}
+
+.main-area .inner-section {
+   padding:12px 12px 5px 12px;
+   background-color:color;
+}
+
+.main-area .inner-section a {
+   text-decoration:none;
+}
+
+.main-area #publish-card .publish {
+   display:flex;
+   align-items:center;
+   gap:1rem;
+}
+
+.main-area #publish-card .publish img {
+   border-radius:50%;
+}
+
+.main-area #publish-card .create-publication {
+   padding:15px;
+   border-radius:35px;
+   border:1px solid var(--color-grey);
+   font-weight:600;
+   color:var(--color-grey);
+   font-size:14px;
+}
+
+.main-area #publish-card .buttons {
+   display:flex;
+   margin-top:5px;
+   justify-content:space-around;
+}
+
+.main-area #publish-card .buttons .button {
+   cursor:pointer;
+   display:flex;
+   align-items:center;
+   gap:0.5rem;
+   padding:10px 10px;
+   border-radius:10px;
+   color:var(--color-grey);
+   font-size:14px;
+   font-weight:600;
+   transition:all 0.1s;
+}
+
+
+.main-area #publish-card .buttons .button:hover {
+   background-color:var(--color-base-bg);
+}
+
+.spacer-order {
+   display:flex;
+  gap:1rem;
+  align-items:center;
+  padding:5px 0px;
+  line-height:23px;
+}
+
+.spacer-order a {
+   text-decoration:none;
+   font-size:12px;
+   color:var(--color-grey)
+}
+
+.spacer-order span {
+   font-weight:600;
+}
+
+.spacer-order hr {
+   flex-grow:1;
+   margin:0;
+   margin-top:3px
+}
+
+
+.main-area #feed-card .top-content {
+   padding-bottom:12px;
+   border-bottom: 1px solid var(--color-base-bg);
+}
+
+.main-area #feed-card .recommended {
+   display:flex;
+   justify-content:space-between;
+}
+
+.main-area #feed-card .recommended .recommended-wrapped {
+   display:flex;
+   align-items:center;
+   gap:0.5rem;
+   font-size:12px;
+}
+
+.main-area #feed-card .recommended .recommended-wrapped p {
+   font-weight:600;
+   color:rgb(0 0 0 / 84%);
+}
+
+.main-area #feed-card .recommended .recommended-wrapped span {
+   color:var(--color-grey)
+}
+.main-area #feed-card .recommended img {
+   border-radius:50%;
+}
+
+.main-area #feed-card .recommended .more-info {
+   cursor:pointer;
+}
+
+.main-area #feed-card .main-content {
+   margin-top:12px;
+}
+
+.main-area #feed-card .main-content .header-feed {
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+}
+
+.main-area #feed-card .main-content .actor {
+   display:flex;
+   gap:0.5rem;
+}
+
+.main-area #feed-card .main-content .info-actor {
+   font-size:12px;
+   color:var(--color-grey);
+   line-height:16px
+}
+
+.main-area #feed-card .main-content .info-actor .name {
+   font-size:14px;
+   font-weight:700;
+}
+
+.main-area #feed-card .main-content .info-actor .name:hover {
+   text-decoration:underline;
+   color:var(--color-action)
+}
+
+.main-area #feed-card .main-content .info-actor .datetime {
+   display:flex;
+   align-items:center;
+   gap:0.1rem;
+}
+
+.main-area #feed-card .main-content .header-feed .follow {
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+   font-weight:600;
+   color:#02478c;
+   border-radius:0.4rem;
+   padding:8px 12px;
+   transition: background-color 0.2s;
+}
+
+.main-area #feed-card .main-content .header-feed .follow:hover {
+   background-color:Red;
+   color:var(--color-action);
+   background-color:rgba(112,181,249,0.2);
+}
+
+.main-area #feed-card .main-content .text-feed {
+   margin-top:12px;
+   font-size:14px;
+   line-height:20px;
+}
+
+.main-area #feed-card .main-content .image-feed {
+   margin-top:12px;
+   margin-left:-12px;
+   margin-right:-12px;
+}
+
+.main-area #feed-card .main-content .image-feed img {
+   width:100%;
+}
+
+.main-area #feed-card .main-content .image-feed .image-details {
+   margin-top:-2px;
+   background-color:var(--color-base-bg);
+   padding:12px;
+   font-size:14px;
+   font-weight:600;
+   color:var(--color-grey);
+}
+
+.main-area #feed-card .main-content .image-feed .more-details {
+   display:flex;
+   align-items:center;
+   margin-top:10px;
+   gap:0.5rem;
+   font-size:12px;
+   font-weight:400;
+}
+
+
+.main-area #feed-card .main-content .likes-wrapper {
+   margin-top:12px;
+   padding-bottom:12px;
+   display:flex;
+   align-items:center;
+   justify-content:space-between;
+   border-bottom:1px solid var(--color-base-bg);
+   font-size:12px;
+   color:var(--color-grey)
+}
+
+.main-area #feed-card .main-content .likes-wrapper .likes {
+   display:flex;
+   align-items:center;
+   gap:0.5rem;
+}
+
+.main-area #feed-card .main-content .buttons-interaction {
+   margin-top:5px;
+   display:flex;
+   justify-content:space-around;
+   font-size:14px;
+}
+.main-area #feed-card .main-content .buttons-interaction .button {
+   border-radius:3px;
+   padding:12px 12px;
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+   color:var(--color-grey);
+   transition: all 0.1s;
+}
+
+.main-area #feed-card .main-content .buttons-interaction .button:hover {
+   background-color:var(--color-base-bg);
+}
+
+/* UTILITIES */
+
+.no-padding {
+   padding:0 !important;
+}
