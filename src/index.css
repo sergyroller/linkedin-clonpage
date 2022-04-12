@@ -170,6 +170,7 @@ section.content {
    grid-template-areas: "sidebar main aside";
    grid-template-columns: minmax(0,5fr) minmax(0,12fr) minmax(300px,7fr);
    gap:1.3rem;
+   margin-bottom:40px;
 }
 @media(max-width:768px) {
    .grid-areas {
@@ -516,7 +517,7 @@ padding:4px 12px;
    margin-right:-12px;
 }
 
-.main-area #feed-card .main-content .image-feed img {
+.main-area #feed-card .main-content .image-feed img,video {
    width:100%;
 }
 
