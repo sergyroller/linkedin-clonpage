@@ -1,3 +1,6 @@
+// IMPORT DATA
+import arrayPost from "./data.js";
+
 // Variables
 const expandNews = document.querySelector("#linkedin-news .load-more");
 const btnCreatePublication = document.querySelector("#create-publication");
@@ -116,4 +119,123 @@ function createPublication() {
     const modal = document.querySelector(".modal-box-container");
     modal.remove();
   });
+}
+dynamicPublication();
+function dynamicPublication() {
+  const ubicationPlace = document.querySelector(".main-area > div:nth-child(3)");
+  const mainItem = document.createElement("div");
+  mainItem.classList.add("main-item");
+  ubicationPlace.insertAdjacentElement("beforebegin", mainItem);
+
+  const innerSection = document.createElement("div");
+  innerSection.classList.add("inner-section");
+  innerSection.setAttribute("id", "feed-card");
+  mainItem.appendChild(innerSection);
+
+  // Verify if publication have recommended interactions
+  if (arrayPost[0].interactions.recommeded.length > 0) {
+    const topContent = document.createElement("div");
+    topContent.classList.add("top-content", "no-mobile");
+    innerSection.appendChild(topContent);
+
+    const recommendedDiv = document.createElement("div");
+    recommendedDiv.classList.add("recommended");
+    topContent.appendChild(recommendedDiv);
+
+    const recommededDivWrappedOne = document.createElement("div");
+    const recommededDivWrappedTwo = document.createElement("div");
+    recommededDivWrappedOne.classList.add("recommended-wrapped");
+    recommendedDiv.appendChild(recommededDivWrappedOne);
+    recommededDivWrappedTwo.classList.add("recommended-wrapped");
+    recommendedDiv.appendChild(recommededDivWrappedTwo);
+
+    const tagAOne = document.createElement("a");
+    const tagATwo = document.createElement("a");
+    const tagPThree = document.createElement("span");
+    tagAOne.setAttribute("href", "#");
+    recommededDivWrappedOne.appendChild(tagAOne);
+    tagATwo.setAttribute("href", "#");
+    tagPThree.textContent = "recomienda esto";
+    recommededDivWrappedOne.appendChild(tagATwo);
+    recommededDivWrappedOne.appendChild(tagPThree);
+
+    const imgTag = document.createElement("img");
+    imgTag.setAttribute("src", "https://static-exp1.licdn.com/sc/h/1c5u578iilxfi4m4dvc4q810q");
+    imgTag.setAttribute("width", "24");
+    imgTag.setAttribute("height", "24");
+    tagAOne.appendChild(imgTag);
+
+    const elementP = document.createElement("p");
+    elementP.textContent = arrayPost[0].interactions.recommeded[0];
+    tagATwo.appendChild(elementP);
+
+    const moreInfo = document.createElement("div");
+    moreInfo.classList.add("more-info");
+    recommededDivWrappedTwo.appendChild(moreInfo);
+
+    const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+      <path d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z"></path>
+    </svg>
+    `;
+    moreInfo.insertAdjacentHTML("beforeend", svg);
+  }
+
+  // CREATE MAIN CONTENT
+
+  const mainContent = document.createElement("div");
+  mainContent.classList.add("main-content");
+  innerSection.appendChild(mainContent);
+
+  const headerFeed = document.createElement("div");
+  headerFeed.classList.add("header-feed");
+  mainContent.appendChild(headerFeed);
+
+  const textFeed = document.createElement("div");
+  textFeed.classList.add("text-feed");
+  mainContent.appendChild(textFeed);
+
+  const imageFeed = document.createElement("div");
+  imageFeed.classList.add("image-feed");
+  mainContent.appendChild(imageFeed);
+
+  const likesWrapper = document.createElement("div");
+  likesWrapper.classList.add("likes-wrapper");
+  mainContent.appendChild(likesWrapper);
+
+  const buttonsInteraction = document.createElement("div");
+  buttonsInteraction.classList.add("buttons-interaction");
+  mainContent.appendChild(buttonsInteraction);
+
+  // CREATE HEADER-FEED
+  const headerFeedATagOne = document.createElement("a");
+  headerFeedATagOne.setAttribute("href", "#");
+  headerFeed.appendChild(headerFeedATagOne);
+
+  const actor = document.createElement("div");
+  actor.classList.add("actor");
+  headerFeedATagOne.appendChild(actor);
+
+  const imgActor = document.createElement("img");
+  imgActor.setAttribute("src", arrayPost[0].photoPerfil);
+  imgActor.setAttribute("width", "48");
+  imgActor.setAttribute("height", "48");
+  actor.appendChild(imgActor);
+
+  const infoActor = document.createElement("div");
+  infoActor.classList.add("info-actor");
+  actor.appendChild(infoActor);
+
+  const infoActorPName = document.createElement("p");
+  infoActorPName.classList.add("name");
+  infoActorPName.textContent = arrayPost[0].type[2].name;
+  infoActor.appendChild(infoActorPName);
+
+  const followersP = document.createElement("p");
+  followersP.textContent = arrayPost[0].type[2].followers + " seguidores";
+  infoActor.insertAdjacentElement("beforeend", followersP);
+
+  const headerFeedATagTwo = document.createElement("a");
+  headerFeedATagTwo.setAttribute("href", "#");
+  headerFeed.appendChild(headerFeedATagTwo);
 }
