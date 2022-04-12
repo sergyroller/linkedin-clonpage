@@ -57,6 +57,10 @@ body {
    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif
 }
 
+textarea {
+   font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif
+}
+
 body {
    background-color:var(--color-base-bg)
 }
@@ -81,6 +85,12 @@ align-items:center;
 gap:0.5rem;
 }
 
+@media(max-width:768px) {
+   header .container {
+      justify-content:space-between;
+   }
+}
+
 header .logo {
    height:34px;
    fill: var(--color-action)
@@ -90,6 +100,7 @@ header .logo {
    width:35%;
    position:relative;
 }
+
 .search-bar input {
    height:34px;
    border:none;
@@ -98,6 +109,15 @@ header .logo {
    width:70%;
    padding-left:40px;
    color:var(--color-grey);
+}
+
+@media(max-width:768px) {
+   .search-bar {
+      width:100%;
+   }
+   .search-bar input {
+      width:85%;
+   }
 }
 
 .search-bar .icon-search {
@@ -150,6 +170,13 @@ section.content {
    grid-template-areas: "sidebar main aside";
    grid-template-columns: minmax(0,5fr) minmax(0,12fr) minmax(300px,7fr);
    gap:1.3rem;
+}
+@media(max-width:768px) {
+   .grid-areas {
+      grid-template-areas:initial;
+      grid-template-columns: none;
+      gap:initial;
+   }
 }
 
 .sidebar-area {
@@ -325,6 +352,11 @@ padding:4px 12px;
    font-weight:600;
    color:var(--color-grey);
    font-size:14px;
+   transition:all 0.2s;
+}
+
+.main-area #publish-card .create-publication:hover {
+   background-color:var(--color-base-bg);
 }
 
 .main-area #publish-card .buttons {
@@ -546,6 +578,13 @@ padding:4px 12px;
    justify-content:space-around;
    font-size:14px;
 }
+
+@media(max-width:768px) {
+   .main-area #feed-card .main-content .buttons-interaction {
+      justify-content:space-between;
+   }
+}
+
 .main-area #feed-card .main-content .buttons-interaction .button {
    border-radius:3px;
    padding:12px 12px;
@@ -554,6 +593,12 @@ padding:4px 12px;
    gap:0.3rem;
    color:var(--color-grey);
    transition: all 0.1s;
+}
+
+@media(max-width:768px) {
+   .main-area #feed-card .main-content .buttons-interaction .button p {
+      display:none;
+   }
 }
 
 .main-area #feed-card .main-content .buttons-interaction .button:hover {
@@ -595,7 +640,17 @@ padding:4px 12px;
 .aside-area #linkedin-news .content-item ul {
    list-style-type: disc;
    padding-left:20px;
+   max-height:250px;
+   transition: max-height 0.40s ease-out;
+   overflow:hidden;
 }
+
+.aside-area #linkedin-news .content-item .expand {
+   max-height:600px;
+   transition:max-height 0.40s ease-out;
+}
+
+
 
 .aside-area #linkedin-news .content-item li a {
    text-decoration:none;
@@ -702,6 +757,161 @@ padding:4px 12px;
    color:var(--color-action);
 }
 
+
+/* MODAL PUBLICATION */
+
+.modal-box-container {
+   z-index:2;
+   position:fixed;
+   width:100%;
+   height:100vh;
+   background-color:#3333333d
+}
+
+.modal-box {
+   z-index:3;
+   position: fixed;
+   width:500px;
+   height:50vh;
+   background-color:var(--color-white);
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius:10px;
+   padding:12px;
+   position:relative;
+}
+
+.modal-box .top-modal {
+   display:flex;
+   align-items:center;
+   justify-content:space-between;
+   padding-bottom:10px;
+   border-bottom:1px solid var(--color-base-bg);
+}
+
+.modal-box .top-modal h3 {
+   font-size:20px;
+   color:var(--color-grey)
+}
+
+.modal-box .content-modal .top-content {
+   margin-top:12px;
+   display:flex;
+   align-items:center;
+   gap:0.5rem;
+}
+
+.modal-box .top-modal #close-modal {
+   cursor:pointer;
+   padding:8px;
+   border-radius:50%;
+   transition: all 0.3s;
+}
+
+.modal-box .top-modal #close-modal:hover {
+   background-color:var(--color-base-bg);
+}
+
+.modal-box .content-modal .top-content img {
+   border-radius:50%;
+}
+
+.modal-box .content-modal .top-content .button {
+   font-weight:500;
+   color:var(--color-grey);
+   text-decoration:none;
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+   padding:5px;
+   border:1px solid;
+   border-radius:16px;
+}
+
+.modal-box .content-modal .text-area-content {
+   margin-top:12px;
+}
+
+
+.modal-box .content-modal .text-area-content textarea {
+   font-size:16px;
+   border:none;
+   resize:none;
+   width:100%;
+   outline:none;
+}
+
+.modal-box .content-modal .text-area-content .add-hashtag {
+   text-decoration:none;
+   color:var(--color-action);
+   padding:5px 10px;
+   border-radius:5px;
+   font-weight:600;
+   transition:all 0.2s;
+
+}
+
+.modal-box .content-modal .text-area-content .add-hashtag:hover {
+   background-color: #02478c38
+}
+
+.modal-box .bottom-content {
+   position:absolute;
+   bottom:12px;
+}
+
+.modal-box .bottom-content-inner {
+   display:flex;
+   margin-top:24px;
+   align-items:center;
+   gap: 1rem;
+   justify-content:space-between;
+}
+
+.modal-box .bottom-content-inner .group-buttons {
+   display:flex;
+   gap:1rem;
+   border-right:1px solid;
+   padding-right:20px;
+   color:var(--color-grey)
+}
+
+.modal-box .bottom-content-inner .button-anymore {
+   font-size:14px;
+   text-decoration:none;
+   font-weight:500;
+   display:flex;
+   align-items:center;
+   gap:0.3rem;
+   color:var(--color-grey);
+}
+
+.modal-box .bottom-content-inner .button-publish {
+   text-decoration:none;
+   background-color:rgba(0, 0, 0, 0.08);
+   color:rgba(177, 177, 177, 1);
+   font-weight:500;
+   border-radius:16px;
+   padding:8px 15px;
+   cursor:not-allowed;
+}
+
+.modal-box .bottom-content .add-hashtag {
+   text-decoration:none;
+   color:var(--color-action);
+   padding:5px 10px;
+   border-radius:5px;
+   font-weight:600;
+   transition:all 0.2s;
+
+}
+
+.modal-box .bottom-content .add-hashtag:hover {
+   background-color: #02478c38
+}
+
+
 /* UTILITIES */
 
 .no-padding {
@@ -716,4 +926,10 @@ padding:4px 12px;
 
 #hash:hover {
    text-decoration:underline;
+}
+
+@media(max-width:768px) {
+   .no-mobile {
+      display:none !important;
+   }
 }

@@ -9,6 +9,8 @@
   <script type="module" src="./index.js"></script>
 </head>
 <body>
+  <div id="modal-create-publication">
+  </div>
   <div hidden>
   <svg class="global-nav__icons" xmlns="http://www.w3.org/2000/svg">
 
@@ -234,7 +236,7 @@
       </div>
       <nav class="nav-header">
         <ul class="nav-items">
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#">
               <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">
                 <use href="#home" class="global-nav__icon-path"></use>
@@ -242,7 +244,7 @@
               <span class="text-item">Inicio</span>
             </a>
           </li>
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#">
               <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">
                 <use href="#mi-red" class="global-nav__icon-path"></use>
@@ -250,7 +252,7 @@
               <span class="text-item">Mi red</span>
             </a>
           </li>
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#">
               <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">
                 <use href="#jobs" class="global-nav__icon-path"></use>
@@ -266,7 +268,7 @@
               <span class="text-item">Mensajes</span>
             </a>
           </li>
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#">
               <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">
                 <use href="#notifications" class="global-nav__icon-path"></use>
@@ -274,13 +276,13 @@
               <span class="text-item">Notificaciones</span>
             </a>
           </li>
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#" class="user-perfil">
               <img width="24" src="https://media-exp1.licdn.com/dms/image/C5603AQHSSCOCnJTWTg/profile-displayphoto-shrink_100_100/0/1589908511130?e=1655337600&amp;v=beta&amp;t=yeAmu8OHaSUv5PGA-5K-Ge9hbw_yQ0qC8WlJcj7IdWA" height="22" alt="Sergio Ruiz Moya">
               <span class="text-item">Yo</span>
             </a>
           </li>
-          <li class="item">
+          <li class="item no-mobile">
             <a href="#">
               <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">
                 <use href="#classic_work" class="global-nav__icon-path"></use>
@@ -294,7 +296,7 @@
   </header>
   <section class="content container">
     <div class="grid-areas">
-      <div class="sidebar-area">
+      <div class="sidebar-area no-mobile">
         <div class="sidebar-item">
           <div class="inner-section">
             <div class="bg-image-user">
@@ -351,14 +353,14 @@
       </div>
       </div>
       <div class="main-area">
-        <div class="main-item">
+        <div class="main-item no-mobile">
           <div id="publish-card" class="inner-section">
             <div class="publish">
               <a href="#">
                 <img src="https://media-exp1.licdn.com/dms/image/C5603AQHSSCOCnJTWTg/profile-displayphoto-shrink_100_100/0/1589908511130?e=1655337600&v=beta&t=yeAmu8OHaSUv5PGA-5K-Ge9hbw_yQ0qC8WlJcj7IdWA" width="48" height="48" alt="Foto de perfil">
               </a>
               <a href="#" style="width:100%">
-                <div class="create-publication">
+                <div id="create-publication" class="create-publication">
                   <p>Crear publicación</p>
                 </div>
               </a>
@@ -391,7 +393,7 @@
             </div>
           </div>
         </div>
-        <div class="spacer-order">
+        <div class="spacer-order no-mobile">
           <hr>
           <a href="#" class="order-button">
             Ordenar por: <span>Populares</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
@@ -401,7 +403,7 @@
         </div>
         <div class="main-item">
           <div id="feed-card" class="inner-section">
-            <div class="top-content">
+            <div class="top-content no-mobile">
               <div class="recommended">
                 <div class="recommended-wrapped">
                 <a href=""><img width="24" height="24px" src="https://static-exp1.licdn.com/sc/h/1c5u578iilxfi4m4dvc4q810q" alt="photo"></a>
@@ -434,7 +436,7 @@
                   </div>
                 </a>
                 <a href="#">
-                  <div class="follow">
+                  <div class="follow no-mobile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
                       <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
                     </svg>
@@ -486,7 +488,7 @@
                   </svg>
                   <p>Compartir</p>
                 </a>
-                <a href="#" class="button">
+                <a href="#" class="button no-mobile">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
                     <path d="M21 3L0 10l7.66 4.26L16 8l-6.26 8.34L14 24l7-21z"></path>
                   </svg>
@@ -498,7 +500,7 @@
         </div>
         <div class="main-item">
           <div id="feed-card" class="inner-section">
-            <div class="top-content">
+            <div class="top-content no-mobile">
               <div class="recommended">
                 <div class="recommended-wrapped">
                 <a href="#"><img width="24" height="24px" src="https://static-exp1.licdn.com/sc/h/1c5u578iilxfi4m4dvc4q810q" alt="photo"><img width="24" height="24px" src="https://media-exp1.licdn.com/dms/image/C4D03AQGm4FSVvw-ojw/profile-displayphoto-shrink_100_100/0/1645193409414?e=1655337600&v=beta&t=UXxVV0xfka0celTwVFaXrNooYIEehytba-3UCBS1sfI" alt="photo"></a>
@@ -531,7 +533,7 @@
                   </div>
                 </a>
                 <a href="#">
-                  <div class="follow">
+                  <div class="follow no-mobile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
                       <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
                     </svg>
@@ -598,7 +600,7 @@
           </div>
         </div>
       </div>
-      <div class="aside-area">
+      <div class="aside-area no-mobile">
         <div class="aside-item">
           <div id="linkedin-news" class="inner-section">
             <div class="title-item">
@@ -610,7 +612,7 @@
               </a>
             </div>
             <div class="content-item">
-              <ul>
+              <ul class="list-news">
                 <li>
                   <a href="#" class="item">
                     <p>Ucrania: últimas noticias</p>
@@ -621,6 +623,24 @@
                   <a href="#" class="item">
                     <p>Hipotecas: vuelve el tipo variables</p>
                     <p class="subtitle">hace 8 horas</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item">
+                    <p>Así creció el empleo público en Europa</p>
+                    <p class="subtitle">hace 4 días</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item">
+                    <p>Así creció el empleo público en Europa</p>
+                    <p class="subtitle">hace 4 días</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item">
+                    <p>Así creció el empleo público en Europa</p>
+                    <p class="subtitle">hace 4 días</p>
                   </a>
                 </li>
                 <li>
